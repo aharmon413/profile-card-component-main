@@ -1,0 +1,113 @@
+/* Kumbh Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    font-size: 100%; /* in most browsers, 16px*/
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(185, 75%, 39%);
+    font-family: Kumbh Sans, sans-serif;
+    font-size: 1.125em; /* 18px */
+}
+
+img[src*="bg-pattern-top.svg"] {
+    width: 50%;
+}
+
+img[src*="bg-pattern-bottom.svg"] {
+    width: 50%;
+}
+
+.container {
+    color: hsl(0, 0%, 59%);
+    background-color: white;
+    width: 325px;
+    height: 370px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+img[src*="bg-pattern-card.svg"] {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+img[src*="image-victor.jpg"] {
+    display: block;
+    border: 5px solid white;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 50%;
+    left: 34%;
+}
+
+.name {
+    display: inline-block;
+    color: hsl(229, 23%, 23%);
+    font-size: inherit;
+    padding-top: 25%;
+}
+
+.age {
+    margin-left: 3px;
+}
+
+.location {
+    font-size: .8em;
+    padding: 8px 8px 25px 8px;
+}
+
+hr {
+    color: hsl(229, 23%, 23%);
+    opacity: .05;
+    height: 1px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.metric {
+    padding: 25px;
+}
+
+.number {
+    color: hsl(229, 23%, 23%);
+    font-weight: 700;
+}
+
+.number ~ p {
+    font-size: .55em;
+    letter-spacing: 2px;
+    padding: 6px
+}
+
+/* 
+What I still need to do:
+    - Figure out how to position the SVGs so that they stay
+    in the same position regardless of screen size, and don't
+    force the user to scroll. They're just cropped based on
+    the viewport. Maybe overflow: hidden?
+
+    - How to get the footer to stay just a bit underneath
+    the profile card regardless of size. When I was using
+    position: fixed and moving it around with bottom/left/etc.
+    both percentages and pixels seemed to change across
+    mobile vs desktop.
+
+    - Add a slight dropshadow to the profile card
+*/
