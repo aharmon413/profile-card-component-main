@@ -4,6 +4,10 @@
 :root {
     font-size: 100%; /* in most browsers, 16px*/
     box-sizing: border-box;
+    --dark-cyan: hsl(185, 75%, 39%);
+    --dark-desat-blue: hsl(229, 23%, 23%);
+    --dark-gray-blue: hsl(227, 10%, 46%);
+    --dark-gray: hsl(0, 0%, 59%);
 }
 
 * {
@@ -13,25 +17,23 @@
 }
 
 body {
-    background-color: hsl(185, 75%, 39%);
+    height: 100vh;
+    background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: bottom 30vh right 45vw, top 48vh left 35vw;
+    background-size: cover;
+    background-color: var(--dark-cyan);
     font-family: Kumbh Sans, sans-serif;
     font-size: 1.125em; /* 18px */
 }
 
-img[src*="bg-pattern-top.svg"] {
-    width: 50%;
-}
-
-img[src*="bg-pattern-bottom.svg"] {
-    width: 50%;
-}
-
 .container {
-    color: hsl(0, 0%, 59%);
-    background-color: white;
+    color: var(--dark-gray);
+    background-color: hsl(0, 0%, 100%);
     width: 325px;
     height: 370px;
     border-radius: 15px;
+    filter: drop-shadow(0 3px 10px hsl(185, 75%, 25%));
     text-align: center;
     margin: 0 auto;
     position: fixed;
@@ -47,7 +49,7 @@ img[src*="bg-pattern-card.svg"] {
 
 img[src*="image-victor.jpg"] {
     display: block;
-    border: 5px solid white;
+    border: 5px solid hsl(0, 0%, 100%));
     border-radius: 50px;
     position: fixed;
     bottom: 50%;
@@ -56,7 +58,7 @@ img[src*="image-victor.jpg"] {
 
 .name {
     display: inline-block;
-    color: hsl(229, 23%, 23%);
+    color: var(--dark-desat-blue);
     font-size: inherit;
     padding-top: 25%;
 }
@@ -71,7 +73,7 @@ img[src*="image-victor.jpg"] {
 }
 
 hr {
-    color: hsl(229, 23%, 23%);
+    color: var(--dark-desat-blue);
     opacity: .05;
     height: 1px;
 }
@@ -86,7 +88,7 @@ hr {
 }
 
 .number {
-    color: hsl(229, 23%, 23%);
+    color: var(--dark-desat-blue);
     font-weight: 700;
 }
 
@@ -96,18 +98,11 @@ hr {
     padding: 6px
 }
 
-/* 
-What I still need to do:
-    - Figure out how to position the SVGs so that they stay
-    in the same position regardless of screen size, and don't
-    force the user to scroll. They're just cropped based on
-    the viewport. Maybe overflow: hidden?
-
-    - How to get the footer to stay just a bit underneath
-    the profile card regardless of size. When I was using
-    position: fixed and moving it around with bottom/left/etc.
-    both percentages and pixels seemed to change across
-    mobile vs desktop.
-
-    - Add a slight dropshadow to the profile card
-*/
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    opacity: .5;
+}
