@@ -106,3 +106,18 @@ footer {
     text-align: center;
     opacity: .5;
 }
+
+@media screen and (orientation: landscape) and (min-height: 300px) 
+and (max-height: 490px) {
+    .container {
+        position: relative;
+        margin: 2em auto 1em auto;
+        transform: translate(0, 0);
+        top: 0;
+        left: 0;
+    }
+    footer {
+        position: relative;
+        bottom: 0;
+    }
+}
